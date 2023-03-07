@@ -34,6 +34,7 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
 	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+	use("rebelot/kanagawa.nvim") -- another good colorscheme
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -76,7 +77,6 @@ return packer.startup(function(use)
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -98,6 +98,9 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+	--vim startup timer
+	use("dstein64/vim-startuptime")
 
 	if packer_bootstrap then
 		require("packer").sync()
