@@ -1,0 +1,5 @@
+require("7empest.plugins.whichkey")
+require("7empest.plugins.treesitter")
+require("7empest.plugins.lsp")
+require("7empest.plugins.colorscheme")
+require("7empest.plugins.null-ls")
