@@ -1,6 +1,7 @@
 local ok, cmp = pcall(require, "cmp")
 if not ok then
 	print("nvim-cmp failed to load")
+    return
 end
 
 cmp.setup({
@@ -34,10 +35,12 @@ cmp.setup({
 local ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
 if not ok then
 	print("cmp_nvim_lsp failed to load")
+    return
 end
 local ok, lspconfig = pcall(require, "lspconfig")
 if not ok then
 	print("lspconfig failed to load")
+    return
 end
 
 local capabilities = cmp_lsp.default_capabilities()

@@ -42,4 +42,9 @@ local plugins = {
 local opts = {
 }
 
-require("lazy").setup(plugins, opts)
+local ok, lazy = pcall(require, "lazy")
+if not ok then
+    print("could not load lazy plugin manager.")
+    return
+end
+lazy.setup(plugins, opts)

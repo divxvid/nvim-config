@@ -1,6 +1,7 @@
 local ok, rosePine = pcall(require, "rose-pine")
 if not ok then
 	print("rose-pine load failed")
+    return
 end
 
 rosePine.setup({

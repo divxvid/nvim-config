@@ -1,6 +1,7 @@
 local ok, whichKey = pcall(require, "which-key")
 if not ok then
 	print("which-key load failed")
+    return
 end
 
 local opts = {}
