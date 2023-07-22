@@ -16,4 +16,9 @@ if not ok then
 	print("lspconfig load failed")
 end
 
+--NOTE: add all lsp names to installed_lsps table in nvim-cmp for autocompletion suggestions
 lspconfig.lua_ls.setup({})
+
+--keymaps
+--to restart the lsp
+vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>")

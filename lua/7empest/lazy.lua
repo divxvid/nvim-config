@@ -13,16 +13,29 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	"folke/which-key.nvim",
+	--treesitter plugin for advanced syntax highlighting
 	"nvim-treesitter/nvim-treesitter",
+	--Mason to manage and install LSPs/Formatters/Linters/Debuggers
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate" -- :MasonUpdate updates registry contents
 	},
+	--the best colorscheme <3
 	"rose-pine/neovim",
+	--utils package used by many plugins
 	"nvim-lua/plenary.nvim",
+	--integrates linters/formatters with lsp
 	"jose-elias-alvarez/null-ls.nvim",
+	--LSP related stuff
 	"neovim/nvim-lspconfig",
 	"williamboman/mason-lspconfig.nvim",
+	--Autocompletion related stuff
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"hrsh7th/nvim-cmp",
+	"L3MON4D3/LuaSnip",
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
