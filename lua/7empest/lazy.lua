@@ -36,6 +36,13 @@ local plugins = {
 	"hrsh7th/cmp-cmdline",
 	"hrsh7th/nvim-cmp",
 	"L3MON4D3/LuaSnip",
+
+    --telescope
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
