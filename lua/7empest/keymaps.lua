@@ -12,4 +12,4 @@ keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 keymap.set("n", "<leader>e", ":Explore<CR>") --open netrw file explorer
-keymap.set("n", "<leader>q", ":bdelete<CR>") --deletes the current buffer
+keymap.set("n", "<leader>bd", ":bdelete<CR>") --deletes the current buffer
