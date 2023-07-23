@@ -3,7 +3,6 @@ if not ok then
 	print("nvim-cmp failed to load")
     return
 end
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -47,6 +46,7 @@ local capabilities = cmp_lsp.default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 local installed_lsp = {
 	'lua_ls',
+    'gopls',
 }
 
 for _, v in pairs(installed_lsp) do

@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- use jk to exit insert mode
-vim.keymap.set("i", "jk", "<ESC>")
+keymap.set("i", "jk", "<ESC>")
 
 
 -- increment/decrement numbers
@@ -12,3 +12,4 @@ keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 keymap.set("n", "<leader>e", ":Explore<CR>") --open netrw file explorer
+keymap.set("n", "<leader>q", ":bdelete<CR>") --deletes the current buffer
