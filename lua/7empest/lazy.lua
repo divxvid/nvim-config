@@ -51,7 +51,13 @@ local plugins = {
         requires = {
             "nvim-lua/plenary.nvim",
         },
-    }
+    },
+
+    --commenter
+    "numToStr/Comment.nvim",
+
+    --lualine
+    "nvim-lualine/lualine.nvim",
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim

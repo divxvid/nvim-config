@@ -16,7 +16,7 @@ cmp.setup({
 		-- { name = 'luasnip' }, -- from saadparwaiz1/cmp_luasnip
 		{ name = 'buffer' }, -- from hrsh7th/cmp-buffer
 		{ name = 'path' }, -- from hrsh7th/cmp-path
-		{ name = 'cmdline' }, -- from hrsh7th/cmp-cmdline
+		-- { name = 'cmdline' }, -- from hrsh7th/cmp-cmdline
 	}),
 	mapping = cmp.mapping.preset.insert({
 		['<C-b>'] = cmp.mapping.scroll_docs(-4),
