@@ -58,6 +58,9 @@ local plugins = {
 
     --lualine
     "nvim-lualine/lualine.nvim",
+
+    --fugitive
+    "tpope/vim-fugitive"
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
