@@ -60,7 +60,14 @@ local plugins = {
     "nvim-lualine/lualine.nvim",
 
     --vim fugitive
-    "tpope/vim-fugitive"
+    "tpope/vim-fugitive",
+
+    --lsp loading spinner
+    {
+        "j-hui/fidget.nvim",
+        tag = "legacy",
+        event = "LspAttach",
+    },
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
