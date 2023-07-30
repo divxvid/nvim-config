@@ -68,6 +68,8 @@ local plugins = {
         tag = "legacy",
         event = "LspAttach",
     },
+
+    "neanias/everforest-nvim",
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
