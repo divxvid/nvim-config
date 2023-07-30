@@ -63,7 +63,16 @@ local plugins = {
     "tpope/vim-fugitive",
 
     --gitsigns
-    "lewis6991/gitsigns.nvim"
+    "lewis6991/gitsigns.nvim",
+
+    --lsp loading spinner
+    {
+        "j-hui/fidget.nvim",
+        tag = "legacy",
+        event = "LspAttach",
+    },
+
+    "neanias/everforest-nvim",
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
