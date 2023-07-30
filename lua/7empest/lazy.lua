@@ -60,7 +60,10 @@ local plugins = {
     "nvim-lualine/lualine.nvim",
 
     --fugitive
-    "tpope/vim-fugitive"
+    "tpope/vim-fugitive",
+
+    --gitsigns
+    "lewis6991/gitsigns.nvim"
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
