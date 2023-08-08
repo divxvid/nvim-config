@@ -9,6 +9,13 @@ if not ok then
     print("luasnip failed to load")
     return
 end
+
+local ok, lspkind = pcall(require, "lspkind")
+if not ok then
+    print("lspkind failed to load")
+    return
+end
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -53,6 +60,9 @@ cmp.setup({
 		completion = cmp.config.window.bordered(), --creates borders around suggestion boxes
 		documentation = cmp.config.window.bordered(), --creates borders around documnetation boxes
 	},
+    formatting = {
+        format = lspkind.cmp_format(),
+    },
 })
 
 

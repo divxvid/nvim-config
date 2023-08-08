@@ -36,6 +36,7 @@ local plugins = {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/nvim-cmp",
     "L3MON4D3/LuaSnip",
+    "onsails/lspkind.nvim",
 
     --telescope
     {
@@ -72,7 +73,8 @@ local plugins = {
         event = "LspAttach",
     },
 
-    "neanias/everforest-nvim",
+    --autoclose brackets
+    "m4xshen/autoclose.nvim",
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
