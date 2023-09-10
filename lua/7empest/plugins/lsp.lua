@@ -22,6 +22,7 @@ end
 --NOTE: add all lsp names to installed_lsps table in nvim-cmp for autocompletion suggestions
 lspconfig.lua_ls.setup({})
 lspconfig.gopls.setup({})
+lspconfig.tsserver.setup({})
 
 --keymaps
 --to restart the lsp

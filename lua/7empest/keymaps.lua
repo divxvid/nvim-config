@@ -6,10 +6,13 @@ local keymap = vim.keymap
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
-
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
-keymap.set("n", "<leader>e", ":Explore<CR>") --open netrw file explorer
+keymap.set("n", "<leader>e", ":Neotree toggle<CR>") --open neotree
 keymap.set("n", "<leader>dd", ":bdelete<CR>") --deletes the current buffer
+
+keymap.set("n", "<leader>gl", ":G log --oneline<CR>")
+keymap.set("n", "<leader>gg", ":G<CR>")
+keymap.set("n", "<leader>gd", ":Gvdiffsplit!<CR>")

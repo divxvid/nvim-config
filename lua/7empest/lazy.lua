@@ -12,14 +12,37 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        }
+    },
+    "sainnhe/gruvbox-material",
+    "nyoom-engineering/oxocarbon.nvim",
+    "ThePrimeagen/git-worktree.nvim",
+    "AlexvZyl/nordic.nvim",
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+    },
     "folke/tokyonight.nvim",
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
         }
     },
     "folke/which-key.nvim",
@@ -32,6 +55,8 @@ local plugins = {
     },
     --the best colorscheme <3
     "rose-pine/neovim",
+    --testing new colorscheme
+    "savq/melange-nvim",
     --utils package used by many plugins
     "nvim-lua/plenary.nvim",
     --integrates linters/formatters with lsp
@@ -85,6 +110,28 @@ local plugins = {
 
     --autoclose brackets
     "m4xshen/autoclose.nvim",
+
+    --neorg
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("neorg").setup {
+                load = {
+                    ["core.defaults"] = {},  -- Loads default behaviour
+                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.dirman"] = {      -- Manages Neorg workspaces
+                        config = {
+                            workspaces = {
+                                notes = "~/neorg-notes",
+                            },
+                        },
+                    },
+                },
+            }
+        end,
+    },
 }
 
 -- optional configuration; check: https://github.com/folke/lazy.nvim
