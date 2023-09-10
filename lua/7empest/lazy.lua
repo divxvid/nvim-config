@@ -12,14 +12,23 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+    },
     "folke/tokyonight.nvim",
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
         }
     },
     "folke/which-key.nvim",
@@ -32,6 +41,8 @@ local plugins = {
     },
     --the best colorscheme <3
     "rose-pine/neovim",
+    --testing new colorscheme
+    "savq/melange-nvim",
     --utils package used by many plugins
     "nvim-lua/plenary.nvim",
     --integrates linters/formatters with lsp

@@ -82,6 +82,7 @@ local capabilities = cmp_lsp.default_capabilities()
 local installed_lsp = {
 	'lua_ls',
     'gopls',
+    'tsserver',
 }
 
 for _, v in pairs(installed_lsp) do
