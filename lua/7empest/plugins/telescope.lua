@@ -23,6 +23,7 @@ telescope.setup({
         },
     },
 })
+telescope.load_extension("git_worktree")
 
 --keymaps
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -35,3 +36,6 @@ vim.keymap.set('n', '<leader>td', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>ts', builtin.treesitter, {})
 vim.keymap.set('n', '<leader>sg', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<leader>qf', builtin.quickfix, {})
+--git worktree related stuff
+vim.keymap.set('n', '<leader>wt', telescope.extensions.git_worktree.git_worktrees, {})
+vim.keymap.set('n', '<leader>cwt', telescope.extensions.git_worktree.create_git_worktree, {})
