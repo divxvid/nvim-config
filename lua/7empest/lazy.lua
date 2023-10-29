@@ -12,6 +12,34 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        }
+    },
+    "sainnhe/gruvbox-material",
+    "navarasu/onedark.nvim",
+    {
+        "ray-x/go.nvim",
+        dependencies = { -- optional packages
+            "ray-x/guihua.lua",
+            "neovim/nvim-lspconfig",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("go").setup()
+        end,
+        event = { "CmdlineEnter" },
+        ft = { "go", 'gomod' },
+        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    },
+    { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+    { "bluz71/vim-moonfly-colors",  name = "moonfly",  lazy = false, priority = 1000 },
     "ThePrimeagen/git-worktree.nvim",
     "AlexvZyl/nordic.nvim",
     {
@@ -107,9 +135,9 @@ local plugins = {
         config = function()
             require("neorg").setup {
                 load = {
-                    ["core.defaults"] = {}, -- Loads default behaviour
+                    ["core.defaults"] = {},  -- Loads default behaviour
                     ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                    ["core.dirman"] = { -- Manages Neorg workspaces
+                    ["core.dirman"] = {      -- Manages Neorg workspaces
                         config = {
                             workspaces = {
                                 notes = "~/neorg-notes",
