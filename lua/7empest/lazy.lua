@@ -12,17 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl",      opts = {} },
+    "christoomey/vim-tmux-navigator",
+    { "catppuccin/nvim",            name = "catppuccin", priority = 1000 },
     {
         "kevinhwang91/nvim-ufo",
         dependencies = {
             "kevinhwang91/promise-async",
         }
-    },
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
     },
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -50,8 +46,8 @@ local plugins = {
         ft = { "go", 'gomod' },
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
-    { "bluz71/vim-nightfly-colors",          name = "nightfly", lazy = false, priority = 1000 },
-    { "bluz71/vim-moonfly-colors",           name = "moonfly",  lazy = false, priority = 1000 },
+    { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = false,   priority = 1000 },
+    { "bluz71/vim-moonfly-colors",  name = "moonfly",    lazy = false,   priority = 1000 },
     "ThePrimeagen/git-worktree.nvim",
     "AlexvZyl/nordic.nvim",
     {
