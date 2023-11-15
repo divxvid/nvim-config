@@ -19,10 +19,43 @@ if not ok then
     return
 end
 
+-- Specify how the border looks like
+local border = {
+    { '┌', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '┐', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+    { '┘', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '└', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+}
+
+-- Add the border on hover and on signature help popup window
+local handlers = {
+    ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+    ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+}
+
+vim.diagnostic.config {
+  virtual_text = false,
+  float = {
+    header = false,
+    border = 'rounded',
+    focusable = true,
+  },
+}
+
 --NOTE: add all lsp names to installed_lsps table in nvim-cmp for autocompletion suggestions
-lspconfig.lua_ls.setup({})
-lspconfig.gopls.setup({})
-lspconfig.tsserver.setup({})
+lspconfig.lua_ls.setup({
+    handlers = handlers,
+})
+lspconfig.gopls.setup({
+    handlers = handlers,
+})
+lspconfig.tsserver.setup({
+    handlers = handlers,
+})
 
 --keymaps
 --to restart the lsp

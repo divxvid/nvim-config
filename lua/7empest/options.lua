@@ -21,3 +21,6 @@ opt.cursorline = true -- highlight the current cursor line
 
 -- clipboard
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+
+vim.opt.list = true
+vim.opt.listchars:append "eol:↴"
