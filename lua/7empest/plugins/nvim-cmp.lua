@@ -18,7 +18,7 @@ end
 
 cmp.setup({
 	snippet = {
-		expand = function(args)
+	expand = function(args)
 			luasnip.lsp_expand(args.body)
 		end,
 	},
@@ -63,6 +63,9 @@ cmp.setup({
     formatting = {
         format = lspkind.cmp_format(),
     },
+    experimental = {
+        ghost_text = true,
+    },
 })
 
 
@@ -77,16 +80,67 @@ if not ok then
     return
 end
 
+-- Specify how the border looks like
+local border = {
+    { '┌', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '┐', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+    { '┘', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '└', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+}
+
+-- Add the border on hover and on signature help popup window
+local handlers = {
+    ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+    ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+}
+
+vim.diagnostic.config {
+  virtual_text = false,
+  float = {
+    header = false,
+    border = 'rounded',
+    focusable = true,
+  },
+}
 local capabilities = cmp_lsp.default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 local installed_lsp = {
-	'lua_ls',
     'gopls',
     'tsserver',
+    'rust_analyzer',
 }
 
 for _, v in pairs(installed_lsp) do
 	lspconfig[v].setup {
-		capabilities = capabilities
+		capabilities = capabilities,
+        handlers = handlers,
 	}
 end
+
+lspconfig.lua_ls.setup({
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" }
+            }
+        }
+    },
+    capabilities = capabilities,
+    handlers = handlers,
+})
+
+lspconfig.elixirls.setup({
+    cmd = { "/home/tempest/.elixir-ls/release/language_server.sh" },
+    capabilities = capabilities,
+    handlers = handlers,
+})
+
+lspconfig.html.setup({
+    filetypes = { "html", "templ", "heex" },
+    capabilities = capabilities,
+    handlers = handlers,
+})

@@ -12,6 +12,31 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+    "tjdevries/gruvbuddy.nvim",
+    "tjdevries/colorbuddy.nvim",
+    "windwp/nvim-ts-autotag",
+    "nvim-telescope/telescope-ui-select.nvim",
+    "jacoborus/tender.vim",
+    "ellisonleao/gruvbox.nvim",
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            -- "rcarriga/nvim-notify",
+        }
+    },
+    "craftzdog/solarized-osaka.nvim",
+    "christoomey/vim-tmux-navigator",
+    "sainnhe/everforest",
+    "rebelot/kanagawa.nvim",
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {
         "nvim-neo-tree/neo-tree.nvim",

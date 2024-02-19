@@ -23,4 +23,9 @@ opt.cursorline = true -- highlight the current cursor line
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
 vim.opt.list = true
-vim.opt.listchars:append "eol:↴"
+-- vim.opt.listchars:append "eol:↴"
+vim.opt.listchars:append "eol:~"
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
+

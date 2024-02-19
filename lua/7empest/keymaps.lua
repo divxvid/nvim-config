@@ -10,7 +10,7 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
-keymap.set("n", "<leader>e", ":Neotree toggle<CR>") --open neotree
+keymap.set("n", "<leader>e", ":Explore<CR>") --open neotree
 keymap.set("n", "<leader>dd", ":bdelete<CR>") --deletes the current buffer
 
 keymap.set("n", "<leader>gl", ":G log --oneline<CR>")
