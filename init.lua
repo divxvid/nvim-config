@@ -3,3 +3,4 @@ require("7empest.options")
 require("7empest.lazy")
 require("7empest.plugins")
 require("7empest.autocmd")
+-- hehehe
